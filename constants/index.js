@@ -1,50 +1,35 @@
 export const exploreWorlds = [
   {
     id: 'world-1',
-    imgUrl: '/gimli.jpg',
-    title: 'RM of Gimli',
+    imgUrl: '/planet-01.png',
+    title: 'The Hogwarts',
   },
   {
     id: 'world-2',
-    imgUrl: '/kaslo-01.jpg',
-    title: 'Village of Kaslo',
+    imgUrl: '/planet-02.png',
+    title: 'The Upside Down',
   },
   {
     id: 'world-3',
-    imgUrl: '/lodi.jpg',
-    title: 'Borough of Lodi',
+    imgUrl: '/planet-03.png',
+    title: 'Kadirojo Permai',
   },
   {
     id: 'world-4',
-    imgUrl: '/three-hills.jpg',
-    title: 'Town of Three Hills',
+    imgUrl: '/planet-04.png',
+    title: 'Paradise Island',
   },
   {
     id: 'world-5',
-    imgUrl: '/lexington.jpg',
-    title: 'Village of Lexington',
+    imgUrl: '/planet-05.png',
+    title: 'Hawkins Labs',
   },
 ];
 
 export const startingFeatures = [
-  {
-    id: 'job-1',
-    company: 'CATALIS',
-    role: 'Software Developer',
-    duration: 'Jan 2023 - Current',
-  },
-  {
-    id: 'job-2',
-    company: 'CATALIS',
-    role: 'Front-End Developer',
-    duration: 'Sep 2022 - Dec 2022',
-  },
-  {
-    id: 'job-3',
-    company: 'MuniSight',
-    role: 'Front-End Developer',
-    duration: 'May 2022 - Aug 2022',
-  },
+  'Find a world that suits you and you want to enter',
+  'Enter the world by reading basmalah to be safe',
+  'No need to beat around the bush, just stay on the gas and have fun',
 ];
 
 export const newFeatures = [

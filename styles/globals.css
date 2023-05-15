@@ -6,8 +6,110 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Eudoxus Sans", sans-serif;
+  font-family: 'Fira Code', monospace;
   scroll-behavior: smooth;
+}
+
+html {
+  background-color: rgb(1 12 21);
+  margin: 30px
+}
+
+#portfolio {
+  border-radius: 7px;
+  border: 1px solid #1E2D3D;
+  overflow: hidden;
+}
+
+body {
+  color: #607B96;
+  background-color: #011627;
+}
+
+body, html {
+  height: -webkit-fill-available;
+  height: -moz-available;
+  height: stretch;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: stretch;
+}
+
+#portfolio,
+[data-nextjs-scroll-focus-boundary] {
+  height: 100%;
+}
+
+#desktop-nav a {
+  display: flex;
+  align-items: center;
+  height: inherit;
+  position: relative;
+  padding: 0 1.75rem;
+  border-right: 1px solid #1e2d3d;
+  transition: all 100ms;
+}
+
+#desktop-nav a.active {
+  color: #fff;
+}
+
+#desktop-nav a.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: #FEA55F;
+}
+
+#desktop-nav a:hover,
+#desktop-nav a:focus {
+  color: #fff;
+  background: #1E2D3D;
+}
+
+footer a,
+footer p {
+  display: flex;
+  align-items: center;
+  height: inherit;
+  position: relative;
+  padding: 0 1.75rem;
+  border-right: 1px solid #1e2d3d;
+  transition: all 100ms;
+}
+
+footer a:hover,
+footer a:focus {
+  color: #fff;
+  background: #1E2D3D;
+}
+
+footer a i::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+}
+
+.border-top {
+  border-top: 1px solid #1e2d3d;
+}
+
+.border-right {
+  border-right: 1px solid #1e2d3d;
+}
+
+.border-bot {
+  border-bottom: 1px solid #1e2d3d;
+}
+
+.border-left {
+  border-left: 1px solid #1e2d3d;
 }
 
 .gradient-01 {
@@ -23,6 +125,58 @@
   );
   filter: blur(125px);
 }
+
+
+.css-blurry-gradient-blue {
+  background: radial-gradient(circle at 50% 50%,#4d5bce,rgba(76,0,255,0));
+  border-radius: 0 0 50% 50%;
+  bottom: 25%;
+  position: fixed;
+  right: 5%;
+  rotate: 10deg
+}
+
+.css-blurry-gradient-blue,.css-blurry-gradient-green {
+  filter: blur(70px);
+  height: 300px;
+  opacity: .5;
+  width: 300px;
+  z-index: 10
+}
+
+.css-blurry-gradient-green {
+  background: radial-gradient(circle at 50% 50%,#43d9ad,rgba(76,0,255,0));
+  border-radius: 0 50%;
+  position: absolute;
+  right: 30%;
+  top: 20%
+}
+
+
+@media (min-width: 1024px) {
+  .css-blurry-gradient-blue {
+      border-radius:100% 50% 100% 0;
+      bottom: 10%;
+      height: 500px;
+      opacity: .7;
+      position: fixed;
+      right: 10%;
+      width: 500px
+  }
+
+  .css-blurry-gradient-green {
+      border-radius: 100% 0 0;
+      filter: blur(100px);
+      height: 400px;
+      opacity: .5;
+      position: fixed;
+      right: 35%;
+      rotate: 20deg;
+      top: 10%;
+      width: 400px
+  }
+}
+
 
 .hero-gradient {
   background: linear-gradient(
