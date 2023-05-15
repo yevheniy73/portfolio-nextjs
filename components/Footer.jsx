@@ -1,4 +1,5 @@
 'use client';
+
 import 'remixicon/fonts/remixicon.css';
 
 const Footer = () => (
@@ -9,7 +10,7 @@ const Footer = () => (
           find me on:
         </p>
         <a href="https://www.linkedin.com/in/kaznovskyi/" target="_blank" rel="noreferrer" className="p-0 w-[56px]">
-          <i className="ri-linkedin-box-fill w-[55px] h-full"></i>
+          <i className="ri-linkedin-box-fill w-[55px] h-full"></i><span className=' hidden'>hidden</span>
         </a>
       </div>
       <a href="https://github.com/yevheniy73" target="_blank" rel="noreferrer" className="border-left">
