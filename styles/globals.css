@@ -153,6 +153,31 @@ footer a i::before {
 }
 
 
+.hljs {
+  color: #abb2bf !important;
+  background: transparent !important;
+}
+
+.hljs-attr,
+.hljs-number,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-pseudo,
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable {
+  color: #fea55f !important;
+}
+
+.hl,
+.js-addition,
+.hljs-attribute,
+.hljs-meta .hljs-string,
+.hljs-regexp,
+.hljs-string {
+  color: #43D9AD !important;
+}
+
 @media (min-width: 1024px) {
   .css-blurry-gradient-blue {
       border-radius:100% 50% 100% 0;
