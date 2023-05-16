@@ -12,7 +12,7 @@ module.exports = {
       colors: {
         'primary-black': '#01080E',
         'primary-dark' : '#011221',
-        'primary-blue' : '#011221',
+        'primary-blue' : '#011627',
         'secondary-purple': '#4D5BCE',
         'secondary-green': '#3C9D93',
         'secondary-gray': '#607B96',
@@ -24,6 +24,14 @@ module.exports = {
       },
       transitionTimingFunction: {
         'out-flex': 'cubic-bezier(0.05, 0.6, 0.4, 0.9)',
+      },
+      screens: {
+
+        'my-sm': '640px',
+        // => @media (min-width: 640px) { ... }
+        'my-md': '880px',
+        // => @media (min-width: 880px) { ... }
+  
       },
     },
   },

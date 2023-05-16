@@ -11,7 +11,7 @@
 }
 
 html {
-  background-color: rgb(1 12 21);
+  background-color: #01080E;
   margin: 30px
 }
 
@@ -19,11 +19,12 @@ html {
   border-radius: 7px;
   border: 1px solid #1E2D3D;
   overflow: hidden;
+  background-color: #011627;
 }
 
 body {
   color: #607B96;
-  background-color: #011627;
+  background-color: #01080E;
 }
 
 body, html {
@@ -40,17 +41,21 @@ body, html {
   height: 100%;
 }
 
-#desktop-nav a {
+#nav a {
   display: flex;
   align-items: center;
-  height: inherit;
+  height: 56px;
   position: relative;
   padding: 0 1.75rem;
   border-right: 1px solid #1e2d3d;
   transition: all 100ms;
 }
 
-#desktop-nav a.active {
+#mobile-nav a {
+  border-right: none;
+}
+
+#nav a.active {
   color: #fff;
 }
 
@@ -64,9 +69,18 @@ body, html {
   background: #FEA55F;
 }
 
-#desktop-nav a:hover,
-#desktop-nav a:focus {
+#mobile-nav a {
+  border-bottom: 1px solid #1e2d3d;
+}
+
+#nav a:hover,
+#nav a:focus {
   color: #fff;
+  background: #1E2D3D;
+}
+
+#nav button:hover,
+#nav button:focus {
   background: #1E2D3D;
 }
 
@@ -87,13 +101,14 @@ footer a:focus {
   background: #1E2D3D;
 }
 
+#mobile-nav button i::before,
 footer a i::before {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
-  font-size: 30px;
+  font-size: 24px;
 }
 
 .border-top {

@@ -3,7 +3,7 @@
 import 'remixicon/fonts/remixicon.css';
 
 const Footer = () => (
-  <div className="w-full hidden lg:flex flex-col">
+  <div className="w-full flex flex-col">
     <footer className="w-full h-[56px] flex justify-between items-center border-top text-secondary-gray">
       <div className="flex h-full">
         <p className="min-w-[100px]">
