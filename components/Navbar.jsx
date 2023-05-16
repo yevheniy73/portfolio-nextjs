@@ -13,7 +13,6 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-
   return (
     <div id="nav" className="w-full flex flex-col">
       <nav id="desktop-nav" className="w-full h-[56px] hidden lg:flex justify-between items-center border-bot text-secondary-gray">
@@ -40,10 +39,10 @@ const Navbar = () => {
         <a href="/">
           _yevhen-kaznovskyi
         </a>
-        <button onClick={handleMenuClick} className="w-[55px] h-full">
+        <button type="button" onClick={handleMenuClick} className="w-[55px] h-full">
           <i className="ri-menu-line w-[55px] h-full" />
         </button>
-        
+
         {isMenuOpen && (
           <div className="absolute flex flex-col w-full top-[56px] bg-primary-blue z-[15]">
             <a href="/" className={pathname === '/' ? 'active' : ''}>
@@ -56,10 +55,11 @@ const Navbar = () => {
               _projects
             </a>
             <a href="/contact-me" className={`${pathname.startsWith('/contact-me') ? 'active' : ''} border-left`}>
-            _contact-me
+              _contact-me
             </a>
           </div>
         )}
+
       </nav>
     </div>
   );
