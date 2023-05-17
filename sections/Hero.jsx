@@ -60,7 +60,7 @@ const Hero = () => (
         <h2 className="text-secondary-purple text-[32px]">&gt; Software Developer</h2>
       </div>
     </div>
-    <div className="z-10 my-sm:flex flex-col gap-5 hidden my-md:relative absolute my-md:top-0 top-[150px] my-md:blur-[0] blur-[3px] overflow-hidden my-md:bottom-0 bottom-[100px]">
+    <div className="z-10 my-sm:flex flex-col gap-5 hidden my-md:relative absolute my-md:top-0 top-[150px] my-md:blur-[0] blur-[3px] my-md:overflow-visible overflow-hidden my-md:bottom-0 bottom-[100px]">
 
       <div className="flex justify-start items-center w-[500px] h-[175px] p-8 bg-primary-dark rounded-[12px] border-[1px] border-primary-blue text-[12px] opacity-60 relative z-0">
         <pre>
