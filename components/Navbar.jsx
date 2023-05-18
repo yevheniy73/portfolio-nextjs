@@ -17,7 +17,7 @@ const Navbar = () => {
     <div id="nav" className="w-full flex flex-col">
       <nav id="desktop-nav" className="w-full h-[56px] hidden lg:flex justify-between items-center border-bot text-secondary-gray">
         <div className="flex h-full">
-          <a href="/" className="min-w-[300px]">
+          <a href="/" className="max-w-[310px] min-w-[310px]">
             _yevhen-kaznovskyi
           </a>
           <a href="/" className={pathname === '/' ? 'active' : ''}>
@@ -39,7 +39,7 @@ const Navbar = () => {
         <a href="/">
           _yevhen-kaznovskyi
         </a>
-        <button type="button" onClick={handleMenuClick} className="w-[55px] h-full">
+        <button type="button" onClick={handleMenuClick} className="w-[55px] h-full opacity-60">
           <i className="ri-menu-line w-[55px] h-full" />
         </button>
 

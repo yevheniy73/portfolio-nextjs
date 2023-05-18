@@ -1,4 +1,3 @@
-import { Footer, Navbar } from '../components';
 import { Hero } from '../sections';
 
 const Page = () => (

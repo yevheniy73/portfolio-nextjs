@@ -35,5 +35,15 @@ module.exports = {
       },
     },
   },
+  purge: {
+    options: {
+      safelist: [
+        'opacity-100',
+        'opacity-80',
+        'opacity-60',
+      ],
+    },
+    // ...
+  },
   plugins: [],
 };

@@ -23,6 +23,7 @@ html {
 }
 
 body {
+  display: flex;
   color: #607B96;
   background-color: #01080E;
 }
@@ -39,7 +40,9 @@ body, html {
 
 #portfolio,
 [data-nextjs-scroll-focus-boundary] {
-  height: 100%;
+  /* height: 100%; */
+  display: flex;
+  flex-grow: 1;
 }
 
 #nav a {
@@ -82,7 +85,8 @@ body, html {
 
 #nav button:hover,
 #nav button:focus {
-  background: #1E2D3D;
+  opacity: 1;
+  /* background: #1E2D3D; */
 }
 
 footer a,
@@ -102,14 +106,20 @@ footer a:focus {
   background: #1E2D3D;
 }
 
-#mobile-nav button i::before,
-footer a i::before {
+i::before {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
   font-size: 24px;
+  transition: all 100ms;
+}
+
+#aboutSideBar button.active,
+#aboutSideBar button:hover,
+#aboutSideBar button:focus {
+  opacity: 1;
 }
 
 .border-top {
@@ -224,4 +234,36 @@ footer a i::before {
   html {
     margin: 30px auto;
   }
+}
+
+.grid-container {
+  width: 50%;
+  border-right: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: fit-content;
+}
+
+.grid-cell {
+  height: 24px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.grid-cell:nth-child(2n) {
+  justify-content: center;
+}
+
+.grid-cell:nth-child(2n + 1) {
+  margin-right: 15px;
+}
+
+.grid-cell:nth-child(2n):last-of-type {
+  justify-content: end;
 }
