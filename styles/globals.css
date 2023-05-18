@@ -35,7 +35,7 @@ body, html {
   width: -webkit-fill-available;
   width: -moz-available;
   width: stretch;
-  max-width: 1920px;
+  /* max-width: 1920px; */
 }
 
 #portfolio,
@@ -230,11 +230,11 @@ i::before {
 }
 
 
-@media (min-width: 1920px) {
+/* @media (min-width: 1920px) {
   html {
     margin: 30px auto;
   }
-}
+} */
 
 .grid-container {
   width: 50%;
