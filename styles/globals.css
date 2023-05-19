@@ -89,6 +89,21 @@ body, html {
   /* background: #1E2D3D; */
 }
 
+#sideContainer button {
+  font-size: 14px;
+  transition: all 100ms;
+}
+
+#sideContainer .my-drop-down button {
+  margin: 6px 0;
+}
+
+#sideContainer .my-drop-down button:hover,
+#sideContainer .my-drop-down button:focus {
+  color: #fff;
+}
+
+
 footer a,
 footer p {
   display: flex;

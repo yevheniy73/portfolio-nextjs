@@ -74,7 +74,7 @@ const About = () => {
     return (
         <div className="w-full h-full flex flex-row">
             {/* =======================================================================================*/}
-            <div className="flex flex-row max-w-[310px] min-w-[310px] border-right">
+            <div id="sideContainer" className="flex flex-row max-w-[310px] min-w-[310px] border-right">
 
                 {/*about-me page left icon bar start -----------------------*/}
                 <div id="aboutSideBar" className="max-w-[70px] min-w-[70px] h-full border-right">
@@ -104,19 +104,62 @@ const About = () => {
                 </div>
                 {/*about-me page left icon bar end -------------------------*/}
 
-                <div className="flex flex-col w-full">
+                {/*folder drop-down start-----------------------------------*/}
+                {content1Visible && (
+                    <div className="flex flex-col w-full">
+                        <button id="personalInfoBtn" type="button" className="w-full h-[40px] border-bot text-left px-4 text-white">
+                            personal-info
+                        </button>
+                        <div className="w-full h-[190px] border-bot">
+                        </div>
+                        <button id="contactsBtn" type="button" className="w-full h-[40px] border-bot text-left px-4 text-white">
+                            contacts
+                        </button>
+                        <div className="w-full flex-grow"></div>
+                    </div>
+                )}
+                {content2Visible && (
+                    <div className="flex flex-col w-full">    
 
-                    <button id="personalInfoBtn" type="button" className="w-full h-[40px] border-bot text-left px-4">
-                        personal-info
-                    </button>
-                    <div className="w-full h-[190px] border-bot"></div>
+                        <button id="personalInfoBtn" type="button" className="w-full h-[40px] border-bot text-left px-4 text-white">
+                            profession-info
+                        </button>
 
-                    <button id="contactsBtn" type="button" className="w-full h-[40px] border-bot text-left px-4">
-                        contacts
-                    </button>
-                    <div className="w-full flex-grow"></div>
 
-                </div>
+                        <div className="my-drop-down block w-full h-[190px] border-bot">
+                            <button id="pro1" type="button" className="w-full h-[28px] text-left px-4">
+                                bio
+                            </button>
+                            <button id="pro2" type="button" className="w-full h-[28px] text-left px-4">
+                                interests
+                            </button>
+                            <button id="pro3" type="button" className="w-full h-[28px] text-left px-4">
+                                education
+                            </button>
+                        </div>
+
+
+                        <button id="contactsBtn" type="button" className="w-full h-[40px] border-bot text-left px-4 text-white">
+                            contacts
+                        </button>
+                        <div className="w-full flex-grow"></div>
+
+                    </div>
+                )}
+                {content3Visible && (
+                    <div className="flex flex-col w-full">
+                        <button id="personalInfoBtn" type="button" className="w-full h-[40px] border-bot text-left px-4 text-white">
+                            hobbies-info
+                        </button>
+                        <div className="w-full h-[190px] border-bot">
+                        </div>
+                        <button id="contactsBtn" type="button" className="w-full h-[40px] border-bot text-left px-4 text-white">
+                            contacts
+                        </button>
+                        <div className="w-full flex-grow"></div>
+                    </div>
+                )}
+                {/*folder drop-down end-------------------------------------*/}
 
             </div>
             {/* =======================================================================================*/}
