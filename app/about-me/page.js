@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, createRef, useState } from 'react';
 import IconBarButton from '../../components/IconBarButton';
 import ContentButton from '../../components/ContentButton';
+import Section from '../../components/Section';
 
 const About = () => {
     const [activeButton, setActiveButton] = useState(2);
@@ -105,7 +106,13 @@ const About = () => {
                 {contentVisible[0] && (
                     <div className="flex flex-col w-full">
                         <ContentButton onClick={() => { }} text="personal-info" />
-                        <div className="w-full h-[190px] border-bot"></div>
+                        <div className="my-drop-down block w-full h-[190px] border-bot">
+                            <Section
+                                iconFolder="./FolderPeach.svg"
+                                buttonText="me"
+                                buttonId="pro1"
+                            />
+                        </div>
                         <ContentButton onClick={() => { }} text="contacts" />
                         <div className="w-full flex-grow"></div>
                     </div>
@@ -114,15 +121,21 @@ const About = () => {
                     <div className="flex flex-col w-full">
                         <ContentButton onClick={() => { }} text="profession-info" />
                         <div className="my-drop-down block w-full h-[190px] border-bot">
-                            <button id="pro1" type="button" className="w-full h-[28px] text-left px-4">
-                                bio
-                            </button>
-                            <button id="pro2" type="button" className="w-full h-[28px] text-left px-4">
-                                interests
-                            </button>
-                            <button id="pro3" type="button" className="w-full h-[28px] text-left px-4">
-                                education
-                            </button>
+                            <Section
+                                iconFolder="./FolderPeach.svg"
+                                buttonText="bio"
+                                buttonId="pro1"
+                            />
+                            <Section
+                                iconFolder="./FolderGreen.svg"
+                                buttonText="interests"
+                                buttonId="pro2"
+                            />
+                            <Section
+                                iconFolder="./FolderBlue.svg"
+                                buttonText="education"
+                                buttonId="pro3"
+                            />
                         </div>
                         <ContentButton onClick={() => { }} text="contacts" />
                         <div className="w-full flex-grow"></div>
@@ -131,7 +144,23 @@ const About = () => {
                 {contentVisible[2] && (
                     <div className="flex flex-col w-full">
                         <ContentButton onClick={() => { }} text="hobbies-info" />
-                        <div className="w-full h-[190px] border-bot"></div>
+                        <div className="my-drop-down block w-full h-[190px] border-bot">
+                            <Section
+                                iconFolder="./FolderPeach.svg"
+                                buttonText="gym"
+                                buttonId="hob1"
+                            />
+                            <Section
+                                iconFolder="./FolderGreen.svg"
+                                buttonText="anime"
+                                buttonId="hob2"
+                            />
+                            <Section
+                                iconFolder="./FolderBlue.svg"
+                                buttonText="coding"
+                                buttonId="hob3"
+                            />
+                        </div>
                         <ContentButton onClick={() => { }} text="contacts" />
                         <div className="w-full flex-grow"></div>
                     </div>
@@ -142,22 +171,24 @@ const About = () => {
                 {contentVisible[0] && (
                     <div className="w-1/2 border-right flex flex-col">
                         <div className="w-full h-[40px] border-bot">{/* Content here */}</div>
-                        <div className="flex flex-row flex-grow w-full gap-4 py-[20px] px-[35px]">
-                            <div className="grid min-w-[64px]">{gridItems}</div>
-                            <div className="w-full">
+                        <div className="flex flex-row flex-grow w-full pl-[35px] gap-4">
+                            <div className="grid min-w-[64px] py-[20px]">{gridItems}</div>
+                            <div className="w-full py-[20px]">
                                 <span ref={textContentRefs.current[0]} className={`text-content${contentVisible[0] ? ' visible' : ''}`}>
+                                    <br></br>  
                                     TODO: profession-info
                                 </span>
                             </div>
+                            <div className="w-[26px] min-w-[26px] h-full border-left"></div>
                         </div>
                     </div>
                 )}
                 {contentVisible[1] && (
                     <div className="w-1/2 border-right flex flex-col">
                         <div className="w-full h-[40px] border-bot">{/* Content here */}</div>
-                        <div className="flex flex-row flex-grow w-full gap-4 py-[20px] px-[35px]">
-                            <div className="grid min-w-[64px]">{gridItems}</div>
-                            <div className="w-full">
+                        <div className="flex flex-row flex-grow w-full pl-[35px] gap-4">
+                            <div className="grid min-w-[64px] py-[20px]">{gridItems}</div>
+                            <div className="w-full py-[20px]">
                                 {/* Add "visible" class based on contentVisible */}
                                 <span ref={textContentRefs.current[1]} className={`text-content${contentVisible[1] ? ' visible' : ''}`}>
                                     <br></br>
@@ -167,6 +198,7 @@ const About = () => {
                                     In my downtime, I enjoy watching anime and staying active at the gym.
                                 </span>
                             </div>
+                            <div className="w-[26px] min-w-[26px] h-full border-left"></div>
                         </div>
                     </div>
                 )}
@@ -178,15 +210,15 @@ const About = () => {
                             <div className="w-full">
                                 <span ref={textContentRefs.current[2]} className={`text-content${contentVisible[2] ? ' visible' : ''}`}>
                                     <br></br>
-                                    Hi, I'm Yevhen! I'm a final year Honors Computing Science student at the University of Alberta,
-                                    with over a year of professional experience as a software developer. I am passionate about coding
+                                    Interns
                                 </span>
                             </div>
+                            <div className="w-[26px] min-w-[26px] h-full border-left"></div>
                         </div>
                     </div>
                 )}
 
-                <div className="w-1/2 border-right flex flex-col">
+                <div className="w-1/2 flex flex-col">
                     <div className="w-full h-[40px] border-bot"></div>
                     <div className="flex flex-row flex-grow w-full gap-4 py-[20px] px-[35px]">
                         <div className="w-full">
