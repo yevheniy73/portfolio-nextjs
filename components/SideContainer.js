@@ -1,10 +1,9 @@
 import React from 'react';
-import IconBarButton from '../components/IconBarButton';
-import ContentButton from '../components/ContentButton';
-import Section from '../components/Section';
+import IconBarButton from './IconBarButton';
+import ContentButton from './ContentButton';
+import Section from './Section';
 
-const SideContainer = ({ activeButton, handleButtonClick, handleSubClick, contentVisible, subActiveButton }) => {
-  return (
+const SideContainer = ({ activeButton, handleButtonClick, handleSubClick, contentVisible, subActiveButton }) => (
     <div id="sideContainer" className="flex flex-row max-w-[310px] min-w-[310px] border-right">
       <div id="aboutSideBar" className="max-w-[70px] min-w-[70px] h-full border-right">
         <IconBarButton
@@ -36,7 +35,7 @@ const SideContainer = ({ activeButton, handleButtonClick, handleSubClick, conten
             />
           </div>
           <ContentButton onClick={() => { }} text="contacts" />
-          <div className="w-full flex-grow"></div>
+          <div className="w-full flex-grow">yevhen@test.com</div>
         </div>
       )}
       {contentVisible[1] && (
@@ -66,7 +65,7 @@ const SideContainer = ({ activeButton, handleButtonClick, handleSubClick, conten
             />
           </div>
           <ContentButton onClick={() => { }} text="contacts" />
-          <div className="w-full flex-grow"></div>
+          <div className="w-full flex-grow">yevhen@test.com</div>
         </div>
       )}
       {contentVisible[2] && (
@@ -92,11 +91,10 @@ const SideContainer = ({ activeButton, handleButtonClick, handleSubClick, conten
             />
           </div>
           <ContentButton onClick={() => { }} text="contacts" />
-          <div className="w-full flex-grow"></div>
+          <div className="w-full flex-grow">yevhen@test.com</div>
         </div>
       )}
     </div>
   );
-};
 
 export default SideContainer;
