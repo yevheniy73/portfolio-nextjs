@@ -97,16 +97,33 @@ html {
 
 #sideContainer button {
 	font-size: 14px;
-	transition: all 100ms;
 }
 
 #sideContainer .my-drop-down button {
 	margin: 6px 0;
 }
 
+#sideContainer .my-drop-down button.active,
 #sideContainer .my-drop-down button:hover,
 #sideContainer .my-drop-down button:focus {
 	color: #fff;
+}
+
+#sideContainer .my-drop-down button img.chevon {
+	-webkit-transition: transform 0.1s ease;
+	-moz-transition: transform 0.1s ease;
+	-ms-transition: transform 0.1s ease;
+	-o-transition: transform 0.1s ease;
+	transition: transform 0.1s ease;
+}
+
+#sideContainer .my-drop-down button.active img.chevon {
+	transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	transform: rotate(90deg);
 }
 
 

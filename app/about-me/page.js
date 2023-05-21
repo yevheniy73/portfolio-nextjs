@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, createRef, useState } from 'react';
 import SideContainer from '../../components/SideContainer';
+import { professionInfoText, aboutText1, aboutText2 } from '../../constants';
 
 const About = () => {
     const [activeButton, setActiveButton] = useState(2);
@@ -112,35 +113,31 @@ const About = () => {
                             <div className="w-full py-[20px]">
                                 {subVisible[0] && (
                                     <span ref={textContentRefs.current[0]} className={`text-content${subVisible[0] ? ' visible' : ''}`}>
-                                        <br></br>  
-                                        TODO: profession-info
+                                        <br /> 
+                                        {professionInfoText}
                                     </span>
                                 )}
                             </div>
                         )}
+                        
                         {contentVisible[1] && (
                             <div className="w-full py-[20px]">
                                 {subVisible[1] && (
                                     <span ref={textContentRefs.current[1]} className={`text-content${subVisible[1] ? ' visible' : ''}`}>
-                                        <br></br>
-                                        Hi, I'm Yevhen! I'm a final year Honors Computing Science student at the University of Alberta,
-                                        with over a year of professional experience as a software developer. I am passionate about coding
-                                        and constantly seeking new knowledge and skills to stay up-to-date in this rapidly-evolving field.
-                                        In my downtime, I enjoy watching anime and staying active at the gym.
+                                        <br />
+                                        {aboutText1}
                                     </span>
                                 )}
                                 {subVisible[2] && (
                                     <span ref={textContentRefs.current[2]} className={`text-content${subVisible[2] ? ' visible' : ''}`}>
-                                        <br></br>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        <br />
+                                        {aboutText2}
                                     </span>
                                 )}
                                 {subVisible[3] && (
                                     <span ref={textContentRefs.current[3]} className={`text-content${subVisible[3] ? ' visible' : ''}`}>
-                                        <br></br>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        <br />
+                                        {aboutText2}
                                     </span>
                                 )}
                             </div>
@@ -150,9 +147,8 @@ const About = () => {
                             <div className="w-full py-[20px]">         
                                 {subVisible[4] && (
                                     <span ref={textContentRefs.current[4]} className={`text-content${subVisible[4] ? ' visible' : ''}`}>
-                                        <br></br>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        <br />
+                                        {aboutText2}
                                     </span>
                                 )}
                             </div>

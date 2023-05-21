@@ -83,11 +83,15 @@ const SideContainer = ({ activeButton, handleButtonClick, handleSubClick, conten
             iconFolder="./FolderGreen.svg"
             buttonText="anime"
             buttonId="hob2"
+            onClick={() => handleSubClick(6)}
+            active={subActiveButton === 6}
           />
           <Section
             iconFolder="./FolderBlue.svg"
             buttonText="coding"
             buttonId="hob3"
+            onClick={() => handleSubClick(7)}
+            active={subActiveButton === 7}
           />
         </div>
         <ContentButton onClick={() => { }} text="contacts" />
