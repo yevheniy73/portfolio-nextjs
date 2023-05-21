@@ -21,7 +21,7 @@ const Hero = () => {
 
   return (
     <section id="hero" className="w-full flex justify-between my-md:items-center items-start my-md:gap-8 gap-48 my-md:flex-row flex-col">
-      <div className="md:min-w-[400px] my-md:z-10 z-[11]">
+      <div className="md:min-w-[630px] my-md:z-10 z-[11]">
         <div className="css-blurry-gradient-blue"></div>
         <div className="css-blurry-gradient-green"></div>
         <div className="head">

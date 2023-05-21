@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Section = ({ iconChev = './ChevronRight.svg', iconFolder, buttonText, buttonId, onClick, active }) => (
+const Folder = ({ iconChev = './ChevronRight.svg', iconFolder, buttonText, buttonId, onClick, active }) => (
   <button
     id={buttonId}
     type="button"
@@ -13,4 +13,4 @@ const Section = ({ iconChev = './ChevronRight.svg', iconFolder, buttonText, butt
   </button>
 );
 
-export default Section;
+export default Folder;

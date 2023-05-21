@@ -12,7 +12,6 @@
 
 html {
 	background-color: #01080E;
-	margin: 30px
 }
 
 #portfolio {
@@ -20,15 +19,20 @@ html {
 	border: 1px solid #1E2D3D;
 	overflow: hidden;
 	background-color: #011627;
+	min-height: calc(100vh - 60px);
+	display: flex;
+    flex-direction: column;
 }
 
 body {
-	display: flex;
+	padding: 30px;
+	position: relative;
 	color: #607B96;
 	background-color: #01080E;
+	min-height: 100vh;
 }
 
-body,
+/* body,
 html {
 	height: -webkit-fill-available;
 	height: -moz-available;
@@ -36,18 +40,29 @@ html {
 	width: -webkit-fill-available;
 	width: -moz-available;
 	width: stretch;
-	/* max-width: 1920px; */
-}
+} */
 
-#portfolio,
+/* #portfolio,
 [data-nextjs-scroll-focus-boundary] {
-	/* height: 100%; */
 	display: flex;
 	flex-grow: 1;
-}
+	min-height: inherit;
+} */
 
 #portfolio > [data-nextjs-scroll-focus-boundary] {
 	overflow: hidden;
+	display: flex;
+    flex-grow: 1;
+}
+
+a,
+button,
+i::before {
+	-webkit-transition: all 0.1s ease;
+	-moz-transition: all 0.1s ease;
+	-ms-transition: all 0.1s ease;
+	-o-transition: all 0.1s ease;
+	transition: all 0.1s ease;
 }
 
 #nav a {
@@ -57,7 +72,6 @@ html {
 	position: relative;
 	padding: 0 1.75rem;
 	border-right: 1px solid #1e2d3d;
-	transition: all 100ms;
 }
 
 #nav a:last-of-type,
@@ -80,7 +94,7 @@ html {
 }
 
 #mobile-nav a {
-	border-bottom: 1px solid #1e2d3d;
+	@apply border-bot
 }
 
 #nav a:hover,
@@ -95,21 +109,29 @@ html {
 	/* background: #1E2D3D; */
 }
 
-#sideContainer button {
-	font-size: 14px;
+#aboutSideMain button {
+	font-size: 16px;
 }
 
-#sideContainer .my-drop-down button {
+#aboutSideMain button.my-triangle:hover,
+#aboutSideMain button.my-triangle:focus {
+	color: #fff;
+	background: #1E2D3D;
+}
+
+#aboutSideMain .my-drop-down button {
 	margin: 6px 0;
+	line-height: 15px;
 }
 
-#sideContainer .my-drop-down button.active,
-#sideContainer .my-drop-down button:hover,
-#sideContainer .my-drop-down button:focus {
+#aboutSideMain .my-drop-down button.active,
+#aboutSideMain .my-drop-down button:hover,
+#aboutSideMain .my-drop-down button:focus {
 	color: #fff;
 }
 
-#sideContainer .my-drop-down button img.chevon {
+#aboutSideMain button.my-triangle img.triangle,
+#aboutSideMain .my-drop-down button img.chevon{
 	-webkit-transition: transform 0.1s ease;
 	-moz-transition: transform 0.1s ease;
 	-ms-transition: transform 0.1s ease;
@@ -117,7 +139,7 @@ html {
 	transition: transform 0.1s ease;
 }
 
-#sideContainer .my-drop-down button.active img.chevon {
+#aboutSideMain .my-drop-down button.active img.chevon {
 	transform: rotate(90deg);
 	-webkit-transform: rotate(90deg);
 	-moz-transform: rotate(90deg);
@@ -126,6 +148,24 @@ html {
 	transform: rotate(90deg);
 }
 
+#aboutSideMain button.my-triangle.active img.triangle {
+	transform: rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+}
+
+#aboutSideMain button.my-triangle.active + .my-drop-down,
+#aboutSideMain button.my-triangle.active + .my-contacts {
+	display: block;
+}
+
+#aboutSideMain button.my-triangle + .my-drop-down,
+#aboutSideMain button.my-triangle + .my-contacts  {
+	display: none;
+}
 
 footer a,
 footer p {
@@ -135,7 +175,6 @@ footer p {
 	position: relative;
 	padding: 0 1.75rem;
 	border-right: 1px solid #1e2d3d;
-	transition: all 100ms;
 }
 
 footer a:hover,
@@ -151,7 +190,6 @@ i::before {
 	width: 100%;
 	height: 100%;
 	font-size: 24px;
-	transition: all 100ms;
 }
 
 #aboutSideBar button.active,

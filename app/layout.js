@@ -10,7 +10,7 @@ const RootLayout = ({ children }) => (
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/atom-one-dark.min.css" />
       </head>
     <body>
-      <div id='portfolio' className='flex flex-col justify-between'>
+      <div id='portfolio'>
         <Navbar />
         {children}
         <Footer />
