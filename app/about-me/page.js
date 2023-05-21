@@ -7,20 +7,25 @@ import Section from '../../components/Section';
 
 const About = () => {
     const [activeButton, setActiveButton] = useState(2);
-    const [contentVisible, setContentVisible] = useState([false, true, false]);
+    const [contentVisible, setContentVisible] = useState([false, false, false]);
+
+    const [subActiveButton, setSubActiveButton] = useState(2);
+    const [subVisible, setSubVisible] = useState([false, false, false, false, false, false, false]);
+
     const [lines, setLines] = useState(0);
     const textContentRefs = useRef([]);
     const [initialLoad, setInitialLoad] = useState(true);
 
     // Initialize the refs for each <span> element
     useEffect(() => {
-        textContentRefs.current = Array(3)
+        textContentRefs.current = Array(subVisible.length)
             .fill()
             .map((_, index) => textContentRefs.current[index] || createRef());
 
         // Simulate a click on the second section to activate it after the component mounts
         if (initialLoad) {
             handleButtonClick(2);
+            handleSubClick(2);
             setInitialLoad(false);
         }
     }, [initialLoad]);
@@ -32,8 +37,15 @@ const About = () => {
         handleResize();
     };
 
+    const handleSubClick = (buttonIndex) => {
+        setSubActiveButton(buttonIndex);
+        const newSubVisible = subVisible.map((_, index) => index + 1 === buttonIndex);
+        setSubVisible(newSubVisible);
+        handleResize();
+    };
+      
     const handleResize = () => {
-        const textElement = textContentRefs.current[activeButton - 1]?.current;
+        const textElement = textContentRefs.current[subActiveButton - 1]?.current;
         if (textElement) {
             const lineHeight = parseInt(getComputedStyle(textElement).lineHeight);
             const elementHeight = textElement.offsetHeight;
@@ -47,8 +59,8 @@ const About = () => {
             handleResize();
         });
 
-        const textElement = textContentRefs.current[activeButton - 1]?.current;
-        if (contentVisible[activeButton - 1] && textElement) {
+        const textElement = textContentRefs.current[subActiveButton - 1]?.current;
+        if (subVisible[subActiveButton - 1] && textElement) {
             resizeObserver.observe(textElement);
         }
 
@@ -62,7 +74,7 @@ const About = () => {
             }
             window.removeEventListener('resize', handleResize);
         };
-    }, [activeButton, contentVisible]);
+    }, [subActiveButton, subVisible]);
 
     const gridItems = [];
 
@@ -111,6 +123,8 @@ const About = () => {
                                 iconFolder="./FolderPeach.svg"
                                 buttonText="me"
                                 buttonId="pro1"
+                                onClick={() => handleSubClick(1)}
+                                active={subActiveButton === 1}
                             />
                         </div>
                         <ContentButton onClick={() => { }} text="contacts" />
@@ -125,16 +139,22 @@ const About = () => {
                                 iconFolder="./FolderPeach.svg"
                                 buttonText="bio"
                                 buttonId="pro1"
+                                onClick={() => handleSubClick(2)}
+                                active={subActiveButton === 2}
                             />
                             <Section
                                 iconFolder="./FolderGreen.svg"
                                 buttonText="interests"
                                 buttonId="pro2"
+                                onClick={() => handleSubClick(3)}
+                                active={subActiveButton === 3}
                             />
                             <Section
                                 iconFolder="./FolderBlue.svg"
                                 buttonText="education"
                                 buttonId="pro3"
+                                onClick={() => handleSubClick(4)}
+                                active={subActiveButton === 4}
                             />
                         </div>
                         <ContentButton onClick={() => { }} text="contacts" />
@@ -149,6 +169,8 @@ const About = () => {
                                 iconFolder="./FolderPeach.svg"
                                 buttonText="gym"
                                 buttonId="hob1"
+                                onClick={() => handleSubClick(5)}
+                                active={subActiveButton === 5}
                             />
                             <Section
                                 iconFolder="./FolderGreen.svg"
@@ -168,55 +190,62 @@ const About = () => {
             </div>
 
             <div className="flex flex-row w-full">
-                {contentVisible[0] && (
-                    <div className="w-1/2 border-right flex flex-col">
-                        <div className="w-full h-[40px] border-bot">{/* Content here */}</div>
-                        <div className="flex flex-row flex-grow w-full pl-[35px] gap-4">
-                            <div className="grid min-w-[64px] py-[20px]">{gridItems}</div>
+                <div className="w-1/2 border-right flex flex-col">
+                    <div className="w-full h-[40px] border-bot">{/* Content here */}</div>
+                    <div className="flex flex-row flex-grow w-full pl-[35px] gap-4">
+                        <div className="grid min-w-[64px] py-[20px]">{gridItems}</div>
+                        {contentVisible[0] && (
                             <div className="w-full py-[20px]">
-                                <span ref={textContentRefs.current[0]} className={`text-content${contentVisible[0] ? ' visible' : ''}`}>
-                                    <br></br>  
-                                    TODO: profession-info
-                                </span>
+                                {subVisible[0] && (
+                                    <span ref={textContentRefs.current[0]} className={`text-content${subVisible[0] ? ' visible' : ''}`}>
+                                        <br></br>  
+                                        TODO: profession-info
+                                    </span>
+                                )}
                             </div>
-                            <div className="w-[26px] min-w-[26px] h-full border-left"></div>
-                        </div>
-                    </div>
-                )}
-                {contentVisible[1] && (
-                    <div className="w-1/2 border-right flex flex-col">
-                        <div className="w-full h-[40px] border-bot">{/* Content here */}</div>
-                        <div className="flex flex-row flex-grow w-full pl-[35px] gap-4">
-                            <div className="grid min-w-[64px] py-[20px]">{gridItems}</div>
+                        )}
+                        {contentVisible[1] && (
                             <div className="w-full py-[20px]">
-                                {/* Add "visible" class based on contentVisible */}
-                                <span ref={textContentRefs.current[1]} className={`text-content${contentVisible[1] ? ' visible' : ''}`}>
-                                    <br></br>
-                                    Hi, I'm Yevhen! I'm a final year Honors Computing Science student at the University of Alberta,
-                                    with over a year of professional experience as a software developer. I am passionate about coding
-                                    and constantly seeking new knowledge and skills to stay up-to-date in this rapidly-evolving field.
-                                    In my downtime, I enjoy watching anime and staying active at the gym.
-                                </span>
+                                {subVisible[1] && (
+                                    <span ref={textContentRefs.current[1]} className={`text-content${subVisible[1] ? ' visible' : ''}`}>
+                                        <br></br>
+                                        Hi, I'm Yevhen! I'm a final year Honors Computing Science student at the University of Alberta,
+                                        with over a year of professional experience as a software developer. I am passionate about coding
+                                        and constantly seeking new knowledge and skills to stay up-to-date in this rapidly-evolving field.
+                                        In my downtime, I enjoy watching anime and staying active at the gym.
+                                    </span>
+                                )}
+                                {subVisible[2] && (
+                                    <span ref={textContentRefs.current[2]} className={`text-content${subVisible[2] ? ' visible' : ''}`}>
+                                        <br></br>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    </span>
+                                )}
+                                {subVisible[3] && (
+                                    <span ref={textContentRefs.current[3]} className={`text-content${subVisible[3] ? ' visible' : ''}`}>
+                                        <br></br>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    </span>
+                                )}
                             </div>
-                            <div className="w-[26px] min-w-[26px] h-full border-left"></div>
-                        </div>
-                    </div>
-                )}
-                {contentVisible[2] && (
-                    <div className="w-1/2 border-right flex flex-col">
-                        <div className="w-full h-[40px] border-bot">{/* Content here */}</div>
-                        <div className="flex flex-row flex-grow w-full gap-4 py-[20px] px-[35px]">
-                            <div className="grid min-w-[64px]">{gridItems}</div>
-                            <div className="w-full">
-                                <span ref={textContentRefs.current[2]} className={`text-content${contentVisible[2] ? ' visible' : ''}`}>
-                                    <br></br>
-                                    Interns
-                                </span>
+                        )}
+
+                        {contentVisible[2] && (
+                            <div className="w-full py-[20px]">         
+                                {subVisible[4] && (
+                                    <span ref={textContentRefs.current[4]} className={`text-content${subVisible[4] ? ' visible' : ''}`}>
+                                        <br></br>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    </span>
+                                )}
                             </div>
-                            <div className="w-[26px] min-w-[26px] h-full border-left"></div>
-                        </div>
+                        )}
+                        <div className="w-[26px] min-w-[26px] h-full border-left"></div>
                     </div>
-                )}
+                </div>
 
                 <div className="w-1/2 flex flex-col">
                     <div className="w-full h-[40px] border-bot"></div>

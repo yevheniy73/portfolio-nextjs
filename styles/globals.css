@@ -46,6 +46,10 @@ html {
 	flex-grow: 1;
 }
 
+#portfolio > [data-nextjs-scroll-focus-boundary] {
+	overflow: hidden;
+}
+
 #nav a {
 	display: flex;
 	align-items: center;

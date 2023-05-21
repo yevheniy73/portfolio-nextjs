@@ -29,7 +29,7 @@ module.exports = {
 
         'my-sm': '640px',
         // => @media (min-width: 640px) { ... }
-        'my-md': '880px',
+        'my-md': '1140px',
         // => @media (min-width: 880px) { ... }
   
       },
