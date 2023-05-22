@@ -106,7 +106,7 @@ const About = () => {
 
             <div className="flex flex-row w-full">
                 <div className="w-1/2 border-right flex flex-col">
-                    <div className="w-full h-[40px] border-bot">{/* Content here */}</div>
+                    <div className="w-full h-[40px] border-bot"></div>
                     <div className="flex flex-row flex-grow w-full pl-[35px] gap-4">
                         <div className="grid min-w-[64px] py-[20px]">{gridItems}</div>
                         {contentVisible[0] && (

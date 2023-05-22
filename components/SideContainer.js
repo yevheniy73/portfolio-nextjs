@@ -118,7 +118,10 @@ const SideContainer = ({ activeButton, handleButtonClick, handleSubClick, conten
         </div>
       )}
       <ContentButton text="contacts" />
-      <div className="my-contacts w-full flex-grow p-[16px]"><a href="mailto:yevhen@test.com">yevhen@test.com</a></div>
+      <div className="my-contacts w-full flex flex-col flex-grow px-[16px] py-[10px]">
+        <a href="mailto:kaznovsk@ualberta.ca" className="w-full h-[40px] text-left flex flex-row justify-start items-center">kaznovsk@ualberta.ca</a>
+        <a href="/Yevhen_Kaznovskyi_CV2023.pdf" className="w-full h-[40px] text-left flex flex-row justify-start items-center" target="_blank">View Resume</a>
+      </div>
     </div>
   </div>
 );
