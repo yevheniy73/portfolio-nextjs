@@ -55,6 +55,10 @@ html {
     flex-grow: 1;
 }
 
+[data-nextjs-scroll-focus-boundary] {
+	width: 100%;
+}
+
 a,
 button,
 i::before {
@@ -74,7 +78,7 @@ i::before {
 	border-right: 1px solid #1e2d3d;
 }
 
-#nav a:last-of-type,
+#desktop-nav > a,
 #mobile-nav a {
 	border-right: none;
 }
@@ -113,6 +117,11 @@ i::before {
 	font-size: 16px;
 }
 
+#aboutSideMain .file-icon:before {
+	font-size: 16px;
+	margin-top: -1px;
+}
+
 #aboutSideMain button.my-triangle:hover,
 #aboutSideMain button.my-triangle:focus {
 	color: #fff;
@@ -120,7 +129,6 @@ i::before {
 }
 
 #aboutSideMain .my-drop-down button {
-	margin: 6px 0;
 	line-height: 15px;
 }
 
@@ -157,14 +165,30 @@ i::before {
 	transform: rotate(-90deg);
 }
 
+#aboutSideMain .my-drop-down,
+#aboutSideMain .my-contacts,
+#aboutSideMain .my-folder-content {
+	-webkit-transition: all 0.1s ease;
+	-moz-transition: all 0.1s ease;
+	-ms-transition: all 0.1s ease;
+	-o-transition: all 0.1s ease;
+	transition: all 0.1s ease;
+}
+
+
 #aboutSideMain button.my-triangle.active + .my-drop-down,
-#aboutSideMain button.my-triangle.active + .my-contacts {
-	display: block;
+#aboutSideMain button.my-triangle.active + .my-contacts,
+#aboutSideMain .my-drop-down button.active + .my-folder-content {
+	opacity: 1;
+    height: auto;
 }
 
 #aboutSideMain button.my-triangle + .my-drop-down,
-#aboutSideMain button.my-triangle + .my-contacts  {
-	display: none;
+#aboutSideMain button.my-triangle + .my-contacts,
+#aboutSideMain .my-drop-down button + .my-folder-content {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
 }
 
 footer a,
@@ -175,6 +199,10 @@ footer p {
 	position: relative;
 	padding: 0 1.75rem;
 	border-right: 1px solid #1e2d3d;
+}
+
+footer > a {
+	border-right: none;
 }
 
 footer a:hover,

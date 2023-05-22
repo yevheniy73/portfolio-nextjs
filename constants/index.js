@@ -17,9 +17,10 @@ export const messages = [
   delay: 120,
   pauseFor: 1800,
 }}`,
-`<div className='w-full h-full flex items-center px-[125px]'>
-  <Hero />
-</div>`,
+`<IconBarButton
+  icon="ri-terminal-box-fill"
+  onClick={() => handleButtonClick(2)}
+/>`,
 `.css-blurry-gradient-green {
   filter: blur(70px);
   height: 300px;

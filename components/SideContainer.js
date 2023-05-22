@@ -2,6 +2,7 @@ import React from 'react';
 import IconBarButton from './IconBarButton';
 import ContentButton from './ContentButton';
 import Folder from './Folder';
+import FolderContent from './FolderContent';
 
 const SideContainer = ({ activeButton, handleButtonClick, handleSubClick, contentVisible, subActiveButton }) => (
   <div id="sideContainer" className="flex flex-row max-w-[310px] min-w-[310px] border-right">
@@ -9,12 +10,12 @@ const SideContainer = ({ activeButton, handleButtonClick, handleSubClick, conten
     <div id="aboutSideBar" className="max-w-[70px] min-w-[70px] h-full border-right">
       <IconBarButton
         active={activeButton === 1}
-        icon="ri-terminal-box-fill"
+        icon="ri-user-4-fill"
         onClick={() => handleButtonClick(1)}
       />
       <IconBarButton
         active={activeButton === 2}
-        icon="ri-game-fill"
+        icon="ri-terminal-box-fill"
         onClick={() => handleButtonClick(2)}
       />
       <IconBarButton
@@ -32,7 +33,7 @@ const SideContainer = ({ activeButton, handleButtonClick, handleSubClick, conten
             <Folder
               iconFolder="./FolderPeach.svg"
               buttonText="me"
-              buttonId="pro1"
+              buttonId="per1"
               onClick={() => handleSubClick(1)}
               active={subActiveButton === 1}
             />
@@ -78,6 +79,9 @@ const SideContainer = ({ activeButton, handleButtonClick, handleSubClick, conten
               onClick={() => handleSubClick(5)}
               active={subActiveButton === 5}
             />
+            <div className="my-folder-content">
+              <FolderContent />
+            </div>
             <Folder
               iconFolder="./FolderGreen.svg"
               buttonText="anime"
@@ -96,7 +100,7 @@ const SideContainer = ({ activeButton, handleButtonClick, handleSubClick, conten
         </div>
       )}
       <ContentButton text="contacts" />
-      <div className="my-contacts w-full flex-grow">yevhen@test.com</div>
+      <div className="my-contacts w-full flex-grow p-[16px]">yevhen@test.com</div>
     </div>
   </div>
 );
