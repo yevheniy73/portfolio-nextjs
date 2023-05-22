@@ -100,7 +100,6 @@ i::before {
 #mobile-nav a {
 	@apply border-bot
 }
-
 #nav a:hover,
 #nav a:focus {
 	color: #fff;
@@ -189,6 +188,15 @@ i::before {
     opacity: 0;
     height: 0;
     overflow: hidden;
+}
+
+.my-contacts a:hover,
+.my-contacts a:focus {
+	color: #fff;
+}
+
+.text-content {
+	white-space: pre-line;
 }
 
 footer a,

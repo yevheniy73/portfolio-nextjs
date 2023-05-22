@@ -24,7 +24,7 @@ const About = () => {
         // Simulate a click on the second section to activate it after the component mounts
         if (initialLoad) {
             handleButtonClick(2);
-            handleSubClick(2);
+            handleSubClick(4);
             setInitialLoad(false);
         }
     }, [initialLoad]);

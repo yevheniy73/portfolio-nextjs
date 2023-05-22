@@ -32,10 +32,11 @@ export const messages = [
 
 export const professionInfoText = `TODO: profession-info`;
 
-export const aboutText1 = `Hi, I'm Yevhen! I'm a final year Honors Computing Science student at the University of Alberta,
-with over a year of professional experience as a software developer. I am passionate about coding
-and constantly seeking new knowledge and skills to stay up-to-date in this rapidly-evolving field.
-In my downtime, I enjoy watching anime and staying active at the gym.`;
+export const aboutText1 = `<!DOCTYPE html>
+<html>
 
-export const aboutText2 = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`;
+Hi, I'm Yevhen! I'm a final year Honors Computing Science student at the University of Alberta, with over a year of professional experience as a software developer. I am passionate about coding and constantly seeking new knowledge and skills to stay up-to-date in this rapidly-evolving field. In my downtime, I enjoy watching anime and staying active at the gym.
+
+</html>`;
+
+export const aboutText2 = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`;

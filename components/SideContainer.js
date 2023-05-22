@@ -37,6 +37,9 @@ const SideContainer = ({ activeButton, handleButtonClick, handleSubClick, conten
               onClick={() => handleSubClick(1)}
               active={subActiveButton === 1}
             />
+            <div className="my-folder-content">
+              <FolderContent folderText={"me.csv"} />
+            </div>
           </div>
         </div>
       )}
@@ -51,6 +54,9 @@ const SideContainer = ({ activeButton, handleButtonClick, handleSubClick, conten
               onClick={() => handleSubClick(2)}
               active={subActiveButton === 2}
             />
+            <div className="my-folder-content">
+              <FolderContent folderText={"bio.html"} />
+            </div>
             <Folder
               iconFolder="./FolderGreen.svg"
               buttonText="interests"
@@ -58,6 +64,9 @@ const SideContainer = ({ activeButton, handleButtonClick, handleSubClick, conten
               onClick={() => handleSubClick(3)}
               active={subActiveButton === 3}
             />
+            <div className="my-folder-content">
+              <FolderContent folderText={"interests.jsx"} />
+            </div>
             <Folder
               iconFolder="./FolderBlue.svg"
               buttonText="education"
@@ -65,6 +74,9 @@ const SideContainer = ({ activeButton, handleButtonClick, handleSubClick, conten
               onClick={() => handleSubClick(4)}
               active={subActiveButton === 4}
             />
+            <div className="my-folder-content">
+              <FolderContent folderText={"education.txt"} />
+            </div>
           </div>
         </div>
       )}
@@ -80,7 +92,7 @@ const SideContainer = ({ activeButton, handleButtonClick, handleSubClick, conten
               active={subActiveButton === 5}
             />
             <div className="my-folder-content">
-              <FolderContent />
+              <FolderContent folderText={"gym.xml"} />
             </div>
             <Folder
               iconFolder="./FolderGreen.svg"
@@ -89,6 +101,9 @@ const SideContainer = ({ activeButton, handleButtonClick, handleSubClick, conten
               onClick={() => handleSubClick(6)}
               active={subActiveButton === 6}
             />
+            <div className="my-folder-content">
+              <FolderContent folderText={"anime.txt"} />
+            </div>
             <Folder
               iconFolder="./FolderBlue.svg"
               buttonText="coding"
@@ -96,11 +111,14 @@ const SideContainer = ({ activeButton, handleButtonClick, handleSubClick, conten
               onClick={() => handleSubClick(7)}
               active={subActiveButton === 7}
             />
+            <div className="my-folder-content">
+              <FolderContent folderText={"coding.py"} />
+            </div>
           </div>
         </div>
       )}
       <ContentButton text="contacts" />
-      <div className="my-contacts w-full flex-grow p-[16px]">yevhen@test.com</div>
+      <div className="my-contacts w-full flex-grow p-[16px]"><a href="mailto:yevhen@test.com">yevhen@test.com</a></div>
     </div>
   </div>
 );
