@@ -327,15 +327,41 @@ i::before {
 	color: #43D9AD !important;
 }
 
+.embla {
+	--slide-spacing: 0px;
+	--slide-size: 100%;
+	--slide-height: 180px;
+	padding: 0;
+  }
+  .embla__viewport {
+	overflow: hidden;
+  }
+  .embla__container {
+	backface-visibility: hidden;
+	display: flex;
+	touch-action: pan-x;
+	flex-direction: column;
+	gap: 1.25rem;
+	height: calc(var(--slide-spacing) + var(--slide-height));
+	margin-top: calc(var(--slide-spacing) * -1);
+  }
+  .embla__slide {
+	overflow: hidden;
+	flex: 0 0 var(--slide-size);
+	min-height: 0;
+	padding-top: var(--slide-spacing);
+	position: relative;
+  }
+
 @media (min-width: 1024px) {
 	.css-blurry-gradient-blue {
 		border-radius: 100% 50% 100% 0;
 		bottom: 10%;
-		height: 500px;
-		opacity: .7;
+		height: 370px;
+		opacity: .6;
 		position: fixed;
 		right: 10%;
-		width: 500px
+		width: 500px;
 	}
 
 	.css-blurry-gradient-green {

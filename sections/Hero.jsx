@@ -1,13 +1,14 @@
 'use client';
 
 import React from "react";
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 import Typewriter from 'typewriter-effect';
 import { messages } from '../constants/index';
 
-
 function Card({ children, opacity }) {
   return (
-    <div className={`flex justify-start items-center w-[500px] h-[175px] p-8 bg-primary-dark rounded-[12px] border-[1px] border-primary-blue text-[12px] opacity-${opacity}`}>
+    <div className={`embla__slide flex justify-start items-center w-[500px] h-[175px] px-8 bg-primary-dark rounded-[12px] border-[1px] border-primary-blue text-[12px]`}>
       <pre>
         <code>{children}</code>
       </pre>
@@ -17,17 +18,19 @@ function Card({ children, opacity }) {
 
 const Hero = () => {
 
+  const [emblaRef] = useEmblaCarousel({ loop: true, axis: 'y'}, [Autoplay()])
+
   const opacities = [60, 80, 100, 80, 60];
 
   return (
-    <section id="hero" className="w-full flex justify-between my-md:items-center items-start my-md:gap-8 gap-48 my-md:flex-row flex-col">
-      <div className="md:min-w-[630px] my-md:z-10 z-[11]">
+    <section id="hero" className="w-full flex justify-between items-center gap-8 sm:flex-row flex-col">
+      <div className="z-10">
         <div className="css-blurry-gradient-blue"></div>
         <div className="css-blurry-gradient-green"></div>
         <div className="head relative z-[11]">
           <span className="text-white text-[18px]">Hi, I am</span>
 
-          <h2 className="text-white text-[58px]">
+          <h2 className="text-white text-[58px] my-md:max-w-full max-w-[260px] my-md:h-auto h-[175px]">
             <Typewriter
               options={{
                 strings: ['Yevhen Kaznovskyi'],
@@ -46,14 +49,18 @@ const Hero = () => {
 
         </div>
       </div>
-      <div className="z-10 my-sm:flex flex-col gap-5 hidden my-md:relative absolute my-md:top-0 top-[150px] my-md:blur-[0] blur-[3px] my-md:overflow-visible overflow-hidden my-md:bottom-0 bottom-[100px]">
-      
-        {messages.map((message, index) => (
-          <Card opacity={opacities[index]} key={index}>
-            {message}
-          </Card>
-        ))}
-
+      <div className="max-h-[180px] z-10 my-1320:block hidden relative top-0">
+        <div className="embla">
+        <div className="embla__viewport" ref={emblaRef}>
+          <div className="embla__container">
+            {messages.map((message, index) => (
+              <Card opacity={opacities[index]} key={index}>
+                {message}
+              </Card>
+            ))}
+          </div>
+        </div>
+      </div>
       </div>
 
     </section>
