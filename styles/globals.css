@@ -25,8 +25,8 @@ html {
 	border: 1px solid #1E2D3D;
 	overflow: hidden;
 	background-color: #011627;
-	min-height: calc(100vh - 2 * var(--window-margin));
-	min-height: calc(100svh - 2 * var(--window-margin));
+	min-height: max(calc(100vh - 2 * var(--window-margin)), 510px);
+	min-height: max(calc(100svh - 2 * var(--window-margin)), 510px);
 	display: flex;
     flex-direction: column;
 }
@@ -39,23 +39,6 @@ body {
 	min-height: 100vh;
 	min-height: 100svh;
 }
-
-/* body,
-html {
-	height: -webkit-fill-available;
-	height: -moz-available;
-	height: stretch;
-	width: -webkit-fill-available;
-	width: -moz-available;
-	width: stretch;
-} */
-
-/* #portfolio,
-[data-nextjs-scroll-focus-boundary] {
-	display: flex;
-	flex-grow: 1;
-	min-height: inherit;
-} */
 
 #portfolio > [data-nextjs-scroll-focus-boundary] {
 	overflow: hidden;
@@ -280,9 +263,9 @@ i::before {
 .css-blurry-gradient-blue {
 	background: radial-gradient(circle at 50% 50%, #4d5bce, rgba(76, 0, 255, 0));
 	border-radius: 0 0 50% 50%;
-	bottom: 10%;
+	bottom: 20%;
 	position: fixed;
-	right: 5%;
+	right: -5%;
 	rotate: 10deg
 }
 
@@ -330,7 +313,7 @@ i::before {
 }
 
 .embla {
-	--slide-spacing: 0px;
+	--slide-spacing: 1px;
 	--slide-size: 100%;
 	--slide-height: 180px;
 	padding: 0;
@@ -343,7 +326,7 @@ i::before {
 	display: flex;
 	touch-action: pan-x;
 	flex-direction: column;
-	gap: 1.25rem;
+	gap: 1px;
 	height: calc(var(--slide-spacing) + var(--slide-height));
 	margin-top: calc(var(--slide-spacing) * -1);
   }
@@ -414,10 +397,17 @@ i::before {
 
 @media screen and (max-width:1023px) {
 	#portfolio {
-		min-height: calc(100vh - 2 * var(--mobile-window-margin));
-		min-height: calc(100svh - 2 * var(--mobile-window-margin));
+		min-height: max(calc(100vh - 2 * var(--mobile-window-margin)), 540px);
+		min-height: max(calc(100svh - 2 * var(--mobile-window-margin)), 540px);	
 	}
 	body {
 		padding: var(--mobile-window-margin);
+	}
+}
+
+@media screen and (max-width:500px) {
+	#hero .head {
+		height: 100%;
+		padding: 70px 0 20px 0;
 	}
 }
