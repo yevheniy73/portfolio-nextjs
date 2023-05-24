@@ -278,7 +278,7 @@ i::before {
 .css-blurry-gradient-blue {
 	background: radial-gradient(circle at 50% 50%, #4d5bce, rgba(76, 0, 255, 0));
 	border-radius: 0 0 50% 50%;
-	bottom: 25%;
+	bottom: 10%;
 	position: fixed;
 	right: 5%;
 	rotate: 10deg

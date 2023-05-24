@@ -4,7 +4,7 @@ const Footer = () => (
   <div className="w-full flex flex-col">
     <footer className="w-full h-[51px] flex justify-between items-center border-top text-secondary-gray">
       <div className="flex h-full">
-        <p className="min-w-[100px]">
+        <p className="min-w-[100px] my-500:flex hidden">
           find me on:
         </p>
         <a href="https://www.linkedin.com/in/kaznovskyi/" target="_blank" rel="noreferrer" className="p-0 w-[51px]">
