@@ -44,7 +44,7 @@ const Navbar = () => {
         </button>
 
         {isMenuOpen && (
-          <div className="absolute flex flex-col w-full top-[56px] bg-primary-blue z-[15] h-[calc(100vh-116px)]">
+          <div className="absolute flex flex-col w-full top-[56px] bg-primary-blue z-[15] h-[calc(100vh-88px)]">
             <a href="/" className={pathname === '/' ? 'active' : ''}>
               _hello
             </a>

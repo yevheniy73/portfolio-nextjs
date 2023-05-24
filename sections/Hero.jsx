@@ -24,7 +24,7 @@ const Hero = () => {
       <div className="md:min-w-[630px] my-md:z-10 z-[11]">
         <div className="css-blurry-gradient-blue"></div>
         <div className="css-blurry-gradient-green"></div>
-        <div className="head">
+        <div className="head relative z-[11]">
           <span className="text-white text-[18px]">Hi, I am</span>
 
           <h2 className="text-white text-[58px]">
@@ -40,6 +40,10 @@ const Hero = () => {
           </h2>
 
           <h2 className="text-secondary-purple text-[32px]">&gt; Software Developer</h2>
+
+          <p className="mt-[80px]">// view my resume</p>
+          <span className="text-white inline-flex whitespace-pre"><p className="text-secondary-purple">const </p><p className="text-secondary-green">resume </p>= <a href="/Yevhen_Kaznovskyi_CV.pdf" target="_blank" className="my-resume text-accent-peach">"https://yevhen.vercel.app/resume"</a></span>
+
         </div>
       </div>
       <div className="z-10 my-sm:flex flex-col gap-5 hidden my-md:relative absolute my-md:top-0 top-[150px] my-md:blur-[0] blur-[3px] my-md:overflow-visible overflow-hidden my-md:bottom-0 bottom-[100px]">

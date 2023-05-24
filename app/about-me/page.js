@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, createRef, useState } from 'react';
 import SideContainer from '../../components/SideContainer';
-import { professionInfoText, aboutText1, aboutText2 } from '../../constants';
+import { professionInfoText, aboutBio, aboutText2 } from '../../constants';
 
 const About = () => {
     const [activeButton, setActiveButton] = useState(2);
@@ -114,7 +114,7 @@ const About = () => {
                                 {subVisible[0] && (
                                     <span ref={textContentRefs.current[0]} className={`text-content${subVisible[0] ? ' visible' : ''}`}>
                                         <br /> 
-                                        {professionInfoText}
+                                        {aboutBio}
                                     </span>
                                 )}
                             </div>
@@ -125,7 +125,7 @@ const About = () => {
                                 {subVisible[1] && (
                                     <span ref={textContentRefs.current[1]} className={`text-content${subVisible[1] ? ' visible' : ''}`}>
                                         <br />
-                                        {aboutText1}
+                                        {aboutText2}
                                     </span>
                                 )}
                                 {subVisible[2] && (

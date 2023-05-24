@@ -38,7 +38,7 @@ const SideContainer = ({ activeButton, handleButtonClick, handleSubClick, conten
               active={subActiveButton === 1}
             />
             <div className="my-folder-content">
-              <FolderContent folderText={"me.csv"} />
+              <FolderContent folderText={"bio.html"} />
             </div>
           </div>
         </div>

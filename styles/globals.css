@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+
+:root {
+	--window-margin: 30px;
+	--mobile-window-margin: 16px;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -19,13 +25,13 @@ html {
 	border: 1px solid #1E2D3D;
 	overflow: hidden;
 	background-color: #011627;
-	min-height: calc(100vh - 60px);
+	min-height: calc(100vh - 2 * var(--window-margin));
 	display: flex;
     flex-direction: column;
 }
 
 body {
-	padding: 30px;
+	padding: var(--window-margin);
 	position: relative;
 	color: #607B96;
 	background-color: #01080E;
@@ -67,6 +73,12 @@ i::before {
 	-ms-transition: all 0.1s ease;
 	-o-transition: all 0.1s ease;
 	transition: all 0.1s ease;
+}
+
+.my-resume:hover,
+.my-resume:focus,
+.my-resume:active {
+	color: #FEA55F;
 }
 
 #nav a {
@@ -339,13 +351,6 @@ i::before {
 	}
 }
 
-
-/* @media (min-width: 1920px) {
-  html {
-    margin: 30px auto;
-  }
-} */
-
 .grid-container {
 	width: 50%;
 	border-right: 1px solid black;
@@ -377,4 +382,14 @@ i::before {
 
 .grid-cell:nth-child(2n):last-of-type {
 	justify-content: end;
+}
+
+@media screen and (max-width:1023px) {
+	#portfolio {
+		min-height: calc(100vh - 2 * var(--mobile-window-margin));
+	}
+	
+	body {
+		padding: var(--mobile-window-margin);
+	}
 }
