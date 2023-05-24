@@ -413,6 +413,7 @@ i::before {
 @media screen and (max-width:1023px) {
 	#portfolio {
 		min-height: calc(100vh - 2 * var(--mobile-window-margin));
+		max-height: calc(100vh - 2 * var(--mobile-window-margin));
 	}
 	
 	body {
