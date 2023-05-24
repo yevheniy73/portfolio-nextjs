@@ -26,6 +26,7 @@ html {
 	overflow: hidden;
 	background-color: #011627;
 	min-height: calc(100vh - 2 * var(--window-margin));
+	min-height: calc(100svh - 2 * var(--window-margin));
 	display: flex;
     flex-direction: column;
 }
@@ -36,6 +37,7 @@ body {
 	color: #607B96;
 	background-color: #01080E;
 	min-height: 100vh;
+	min-height: 100svh;
 }
 
 /* body,
@@ -413,9 +415,8 @@ i::before {
 @media screen and (max-width:1023px) {
 	#portfolio {
 		min-height: calc(100vh - 2 * var(--mobile-window-margin));
-		max-height: calc(100vh - 2 * var(--mobile-window-margin));
+		min-height: calc(100svh - 2 * var(--mobile-window-margin));
 	}
-	
 	body {
 		padding: var(--mobile-window-margin);
 	}
